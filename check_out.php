@@ -1,7 +1,8 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($conn,"ems");
+include('config.php');
+// $conn = mysqli_connect("localhost","root","");
+// $db = mysqli_select_db($conn,"ems");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

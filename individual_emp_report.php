@@ -23,8 +23,9 @@
 			<tbody>
 				<?php
                 session_start();
-					$connection = mysqli_connect("localhost","root","");
-					$db = mysqli_select_db($connection,"ems");
+                    include('config.php');
+					// $connection = mysqli_connect("localhost","root","");
+					// $db = mysqli_select_db($connection,"ems");
                     $user_name = $_SESSION['USER_NAME'];
 					$query = "select * from check_ins where username='$user_name' ORDER BY `id` ASC ";
 					$query_run = mysqli_query($connection,$query);

@@ -1,6 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($conn,"ems");
+include('config.php');
+// $conn = mysqli_connect("localhost","root","");
+// $db = mysqli_select_db($conn,"ems");
 
 
 // get our past 7 days from current-date

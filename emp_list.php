@@ -14,8 +14,9 @@
 		<table class="table">
 			<tbody>
 				<?php
-					$connection = mysqli_connect("localhost","root","");
-					$db = mysqli_select_db($connection,"ems");
+					// $connection = mysqli_connect("localhost","root","");
+					// $db = mysqli_select_db($connection,"ems");
+					include('config.php');
 					$query = "select * from authentication WHERE role='user' ORDER BY `ID` ASC ";
 					$query_run = mysqli_query($connection,$query);
 					while($row = mysqli_fetch_assoc($query_run)){

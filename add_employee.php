@@ -1,6 +1,7 @@
 <?php
-  $connection = mysqli_connect("localhost","root","");
-  $db = mysqli_select_db($connection,"ems");
+  include('config.php');
+  // $connection = mysqli_connect("localhost","root","");
+  // $db = mysqli_select_db($connection,"ems");
 
   if(isset($_POST['add'])){
     $query = "INSERT INTO authentication VALUES
