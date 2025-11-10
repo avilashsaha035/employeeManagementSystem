@@ -6,7 +6,7 @@ include('config.php');
 
 // get our past 7 days from current-date
 $sql = "SELECT DISTINCT DATE(check_in_time) AS check_in_date FROM check_ins";
-$result = $conn->query($sql);
+$result = $connection->query($sql);
 $dates = array();
 for ($i = 7; $i > 0; $i--) {
     $date = date('Y-m-d', strtotime("-$i days"));
@@ -62,8 +62,9 @@ $selected_date = isset($_POST['selected_date']) ? $_POST['selected_date'] : date
 			</thead>
 			<tbody>
 				<?php
-					$connection = mysqli_connect("localhost","root","");
-					$db = mysqli_select_db($connection,"ems");
+                    include('config.php');
+					// $connection = mysqli_connect("localhost","root","");
+					// $db = mysqli_select_db($connection,"ems");
 					$query = "select * from check_ins WHERE DATE(check_in_time) = '$selected_date' ORDER BY `id` ASC ";
 					$query_run = mysqli_query($connection,$query);
 					while($row = mysqli_fetch_assoc($query_run)){

@@ -11,9 +11,9 @@ $dbname = "ems";         // db name
 // $password = "Avi24lash35";              // your db password
 // $dbname = "if0_40340974_ems";          // db name
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$connection = mysqli_connect($servername, $username, $password, $dbname);
 
-if (!$conn) {
+if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
