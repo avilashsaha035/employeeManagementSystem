@@ -4,24 +4,24 @@ include('config.php');
 // $conn = mysqli_connect("localhost","root","");
 // $db = mysqli_select_db($conn,"ems");
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
 if (isset($_POST['check_in'])) {
     $username = $_POST['username'];
     $check_in_time = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO check_ins (username, check_in_time) VALUES ('$username', '$check_in_time')";
-    if ($conn->query($sql) === TRUE) {
+    if ($connection->query($sql) === TRUE) {
         echo "<script> alert('Check-in successful'); 
             window.location.href = 'check_out.php';
             </script>";
         echo "";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $connection->error;
     }
 }
-$conn->close();
+$connection->close();
 ?>
 
 <!DOCTYPE html>
