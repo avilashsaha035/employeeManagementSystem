@@ -4,8 +4,8 @@ include('config.php');
 // $conn = mysqli_connect("localhost","root","");
 // $db = mysqli_select_db($conn,"ems");
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
 
 //check-out
@@ -14,12 +14,12 @@ if (isset($_POST['check_out'])) {
     $check_out_time = date('Y-m-d H:i:s');
 
     $sql = "UPDATE check_ins SET check_out_time='$check_out_time' WHERE username='$username'";
-    if ($conn->query($sql) === TRUE) {
+    if ($connection->query($sql) === TRUE) {
         echo "<script> alert('Check-out successful!')
         window.location.href =  'index.php'; 
         </script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $connection->error;
     }
 }
 ?>
